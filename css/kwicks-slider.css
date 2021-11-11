@@ -174,11 +174,11 @@ text-decoration:none;
 }
  .flex-direction-nav a.flex-next {
 text-align:right;
-background:url(../img/flexslider/next.png) no-repeat 50% 50% #181818
+background:url(../images/flexslider/next.png) no-repeat 50% 50% #181818
 }
  .flex-direction-nav a.flex-prev {
 text-align:left;
-background:url(../img/flexslider/prev.png) no-repeat 50% 50% #181818
+background:url(../images/flexslider/prev.png) no-repeat 50% 50% #181818
 }
 .flex-direction-nav a:hover{background-color:#e85356}
 

@@ -102,7 +102,7 @@ html {
 
 body{
 	font: 14px / 21px 'Droid Sans' , Georgia, serif;
-	background:url(../img/pattern/arches.png) fixed #dadcdd;
+	background:url(../images/pattern/arches.png) fixed #dadcdd;
 	color:#595959;
     -webkit-font-smoothing: antialiased;	
 }
@@ -242,7 +242,7 @@ img{
 }
 
 #home,#work, #contact {
-    background: url(../img/pattern/pattern-base.jpg);
+    background: url(../images/pattern/pattern-base.jpg);
 }
 
 #blog{
@@ -260,7 +260,7 @@ img{
     z-index: 1000;
     position: relative;
 	width:100%;
-	background:url(../img/pattern/pattern-topbar.jpg);
+	background:url(../images/pattern/pattern-topbar.jpg);
     box-shadow: 0px 1px 0px rgba(0,0,0,.2);
 }
 
@@ -911,12 +911,12 @@ span.slogan-left{
 /*-- SLIDER WRAP*/
 
 .fullwidthNivoWrap{
-    background: url(../img/pattern/pattern-base.jpg);
+    background: url(../images/pattern/pattern-base.jpg);
     box-shadow: inset 8px 9px 15px rgba(0,0,0,.05);
 }
 
 .fullwidthFlixWrap{
-	background:url(../img/pattern/arches.png);
+	background:url(../images/pattern/arches.png);
 	/*padding:2em;*/
 	margin:0;
 	position: relative;
@@ -938,7 +938,7 @@ span.slogan-left{
 	margin:0 auto;
 	padding:0;
 	overflow:hidden;
-	background:url(../img/pattern/arches.png);
+	background:url(../images/pattern/arches.png);
 	box-shadow:0 0 1px 1px rgba(0,0,0,.05) inset;	
 }
 
@@ -1279,7 +1279,7 @@ ul.tabs li.active i{
 }
 
 ul.tabs li.active{
-	background: url(../img/pattern/pattern-base.jpg);
+	background: url(../images/pattern/pattern-base.jpg);
 	border:1px solid #fff;
 	border-bottom:none;	
 	z-index:3;	
@@ -1289,7 +1289,7 @@ ul.tabs li.active{
 	clear: both;
 	float: left; 
 	width: 100%;
-	background: url(../img/pattern/pattern-base.jpg);
+	background: url(../images/pattern/pattern-base.jpg);
 	border:1px solid #fff;
 	position:relative;
 	z-index:2;
@@ -1794,7 +1794,7 @@ div[class^="parallax-band"]{
 
 
 .parallax-band1{
-    background-image:url(../img/parallax-separator/parallax1.jpg);
+    background-image:url(../images/parallax-separator/parallax1.jpg);
     height:400px;
     overflow: hidden;
 }
@@ -1874,7 +1874,7 @@ div[class^="parallax-band"]{
 }
 
 .parallax-band{
-    background:url(../img/parallax-separator/parallax.jpg) repeat-Y 50% 0%;    
+    background:url(../images/parallax-separator/parallax.jpg) repeat-Y 50% 0%;    
 }
 
 .counter-wrap{
@@ -2430,7 +2430,7 @@ div[class^="parallax-band"]{
 
 /* mouse grab icon */
 .grabbing { 
-    cursor:url(../img/client/grabbing.png) 8 8, move;
+    cursor:url(../images/client/grabbing.png) 8 8, move;
 }
 
 /* fix */
@@ -3121,7 +3121,7 @@ span.toggle-button{
 .va-nav span{
 	width:40px;
 	height:25px;
-	background:transparent url(../img/accordion/prev.png) no-repeat center center;
+	background:transparent url(../images/accordion/prev.png) no-repeat center center;
 	position:absolute;
 	top:-35px;
 	left:50%;
@@ -3133,7 +3133,7 @@ span.toggle-button{
 	z-index:100;
 }
 .va-nav span.va-nav-next{
-	background:url(../img/accordion/next.png);
+	background:url(../images/accordion/next.png);
 	top:auto;
 	bottom:-35px;
 }
@@ -3732,7 +3732,7 @@ ul.error_messages li{
 
 footer{
 	padding:6em 0 3em;
-    background:url(../img/pattern/pattern-base.jpg);
+    background:url(../images/pattern/pattern-base.jpg);
 	text-align:center;
 	border-top:1px solid rgba(0,0,0,.1)		
 }
@@ -4161,7 +4161,7 @@ input#search{
 }
 
 #fullWidthPostImg{
-	background:url(../img/blog/1.jpg)  50% 0 no-repeat fixed;
+	background:url(../images/blog/1.jpg)  50% 0 no-repeat fixed;
 	position:relative;
 	width:100%;
 	height:500px;
@@ -4188,7 +4188,7 @@ input#search{
 }
 
 #fullWidthPostImg2{
-	background:url(../img/blog/2.jpg)  50% 0 repeat fixed;
+	background:url(../images/blog/2.jpg)  50% 0 repeat fixed;
 	position:relative;
 	width:100%;
 	height:400px;
@@ -4476,7 +4476,7 @@ input#search{
 }
 
 .fullWidthVideoImg{
-	background:url(../img/blog/3.jpg) fixed center center;
+	background:url(../images/blog/3.jpg) fixed center center;
     background-size: cover ;
     display: block;
     padding-bottom: 40%;
