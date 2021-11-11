@@ -1,0 +1,33 @@
+.tp-caption.WebProduct-Title, .WebProduct-Title,
+.tp-caption.Agency-Title, .Agency-Title,
+.tp-caption.ContentZoom-SmallTitle, .ContentZoom-SmallTitle{
+	font-family: 'Droid Serif', sans-serif;
+	font-weight: bold; 
+}
+
+.tp-caption.WebProduct-SubTitle, .WebProduct-SubTitle,
+.tp-caption.WebProduct-Content, .WebProduct-Content{
+	font-family: 'Droid Sans' , Georgia, serif;
+}
+
+.rev_slider .tp-caption{
+	font-family: 'Droid Serif', sans-serif;
+}
+
+.hephaistos .tp-bullet{
+	border-width:2px;
+}
+
+.hephaistos .tp-bullet:hover, .hephaistos .tp-bullet.selected{
+	border-color:#AE8E1B;
+	
+	box-shadow: none;
+}
+
+#rev_slider_1058_1_wrapper{
+	text-align: left;
+}
+
+.tp-videolayer iframe{
+	border:none !important;
+}
