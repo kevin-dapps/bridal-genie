@@ -1,0 +1,713 @@
+<?php
+    require($_SERVER['DOCUMENT_ROOT'].'/sendgrid/sendgrid-php.php');
+    
+    if(isset($_POST['email'])){
+        $email = new \SendGrid\Mail\Mail(); 
+        $email->setFrom("bridalgenie@gmail.com", "The Bridal Genie Website");
+        $email->setSubject("Bridal Genie - Wish Submitted!");
+        $email->addTo("bridalgenie@gmail.com", "The Bridal Genie");
+        $email->addContent("text/html", $_POST['body_html']);
+        $sendgrid = new \SendGrid('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');
+        try {
+            $response = $sendgrid->send($email);
+            print $response->statusCode() . "\n";
+            print_r($response->headers());
+            print $response->body() . "\n";
+        } catch (Exception $e) {
+            echo 'Caught exception: '. $e->getMessage() ."\n";
+        }
+    }
+    require('includes/header.php');
+    
+?>
+
+<body class="pre-loader smoothy">
+
+    <!-- START PRELOADER -->
+     <div class="ole">
+    
+        <section id="jSplash">
+        
+            <div id="circle"></div>
+            
+        </section>
+        
+    </div>
+    <!-- END PRELOADER -->
+   
+    <div id="top-bar-holder">
+
+        <div id="top-bar">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <ul class="bar-cols clearfix">
+
+                        <li class="col-md-3 col-sm-6">
+
+                            <div class="bar-block">
+                                <h4>About The Board</h4>
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies ege. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
+
+                            </div>
+                            <!-- End bar-block -->
+
+                        </li>
+                        <!-- End col-md-3 -->
+
+                        <li class="col-md-3 col-sm-6">
+
+                            <div class="bar-block clearfix">
+                                <h4>Recent posts</h4>
+                                <div class="recent-post first-post">
+                                    <a href="#" class="thumb">
+                                        <img src="img/top-bar/1.jpg" alt="Post" />
+                                    </a>
+                                    <div class="post-head">
+                                        <a href="#">Pellentesque habitant morbi senectus</a>
+                                        <span>| Oct / 20 / 2013</span>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <a href="#" class="thumb">
+                                        <img src="img/top-bar/2.jpg" alt="Post" />
+                                    </a>
+                                    <div class="post-head">
+                                        <a href="#">Pellentesque habitant morbi senectus</a>
+                                        <span>| Oct / 20 / 2013</span>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <a href="#" class="thumb">
+                                        <img src="img/top-bar/3.jpg" alt="Post" />
+                                    </a>
+                                    <div class="post-head">
+                                        <a href="#">Pellentesque habitant morbi senectus</a>
+                                        <span>| Oct / 20 / 2013</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End bar-block -->
+
+                        </li>
+                        <!-- End col-md-3 -->
+
+                        <li class="col-md-3 col-sm-6">
+
+                            <div class="bar-block">
+                                <h4>Recent Tweets</h4>
+                                <div class="twitter-wrap clearfix">
+
+                                    <a class="twitter-timeline" data-height="300" data-theme="light" href="https://twitter.com/envato">Tweets by envato</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                                </div>
+
+                            </div>
+                            <!-- End bar-block -->
+
+                        </li>
+                        <!-- End col-md-3 -->
+
+                        <li class="col-md-3 col-sm-6">
+
+                            <div class="bar-block clearfix">
+                                <h4>Recent Photos</h4>
+                                <div class="recent-work">
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="https://www.cinderelladivine.net/media//homeslide/mainslide/image/cd-banner-wh.jpg">
+                                        <img src="img/top-bar/thumb/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="https://www.cinderelladivine.net/media//homeslide/mainslide/image/cd-bnr-black-3.jpg">
+                                        <img src="img/top-bar/thumb/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="img/top-bar/large-img/3.jpg">
+                                        <img src="img/top-bar/thumb/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="img/top-bar/large-img/4.jpg">
+                                        <img src="img/top-bar/thumb/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="img/top-bar/large-img/5.jpg">
+                                        <img src="img/top-bar/thumb/5.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                    <a class="fancybox" data-fancybox-group="gallery11" title="Recent Photos" href="img/top-bar/large-img/6.jpg">
+                                        <img src="img/top-bar/thumb/6.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!-- End bar-block -->
+
+                        </li>
+                        <!-- End col-md-3 -->
+
+                    </ul>
+                    <!-- End bar-cols -->
+
+                </div>
+                <!-- End Row -->
+
+            </div>
+            <!-- End container -->
+
+        </div>
+        <!-- End top-bar -->
+
+        <a href="#" id="top-open" class=""></a>
+
+    </div> <!-- End top-bar-holder -->
+   
+   <!-- START HOME -->
+   <div class="page nopad" id="home">
+    
+        <header>   
+           
+             <div class="container">
+               
+                   <div class="row">
+                                                  
+                       <div class="col-md-12">
+                           
+                           <div src="/images/logo-cropped.png" style="
+                                background: url('/images/logo-cropped.png');
+                                background-size: 250px;
+                                background-repeat: no-repeat;
+                                width: 100%;
+                                background-position-x: center;
+                                height: 118px;"></div>
+                           
+                        </div> <!-- end col-md-12 -->
+            
+                  </div> <!-- end row -->
+              
+             </div> <!-- end container -->
+       
+       </header>  <!-- end header -->
+     
+       <div class="top-nav sticky--header" data-highlight="true">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12 clearfix">
+
+                        <div class="button-content center brand-content">
+                                <div class="button-content__shape">menu
+                                    <i class="fa fa-align-justify"></i>
+                                </div>
+                            </div>
+
+                        <div class="menu-wrap">
+
+                            <nav id="menu">
+
+                                <ul id="navigation">
+
+                                    <li>
+                                        <a href="/index.php#home" class="active firstCh">
+                                            <span>Home</span>
+                                            <i class="fa fa-home fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.php#about" class="secondCh">
+                                            <span>About</span>
+                                            <i class="fa fa-group fa-2x"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/index.php#contact">
+                                            <span>Book Me</span>
+                                            <i class="fa fa-envelope fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/index.php#company" class="lastCh">
+                                            <span>Company </span>
+                                            <i class="fa fa-briefcase fa-2x"></i>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+
+                            </nav>
+                            <!-- end menu -->
+
+                        </div>
+                        <!-- end menu-wrap -->
+                        
+                        <div class="menu-mobile">
+
+                                <nav class="menu-mobile__scroll">
+
+                                    <ul id="navigation-mobile">
+
+                                        <li>
+                                        <a href="/index.php#home" class="active firstCh">
+                                            <span>Home</span>
+                                            <i class="fa fa-home fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.php#about" class="secondCh">
+                                            <span>About</span>
+                                            <i class="fa fa-group fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/index.php#contact">
+                                            <span>Book Me</span>
+                                            <i class="fa fa-envelope fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/index.php#company" class="lastCh">
+                                            <span>Company Info</span>
+                                            <i class="fa fa-landmark fa-2x"></i>
+                                        </a>
+                                    </li>
+
+                                    </ul>
+
+                                </nav>
+                                <!-- end menu-left -->
+
+                            </div>
+                            <!-- end mobile menu -->
+
+                    </div>
+                    <!-- end col-md-12 -->
+
+                </div>
+                <!-- end row -->
+
+            </div>
+            <!-- end container -->
+
+        </div>
+        <!-- end top-nav -->
+       
+    </div> 
+    <!-- END HOME --> 
+
+     <!-- START ABOUT -->
+    <div class="page" id="about">
+
+        <div class="about-wrap">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="sectionTitle">
+
+                            <h2>Terms & Conditions</h2>
+
+                        </div>
+                        <!-- end sectionTitle -->
+
+                    </div>
+                    <!-- end col-md-12 -->
+
+                </div>
+                <!-- end row -->
+
+            </div>
+            <!-- end container -->
+
+            <div class="container text-left">
+                
+                <pre>General Terms and Conditions of Use
+Your use of Web sites and other mobile applications, content and services (collectively, the &quot;Service&quot;) made available by The
+Bridal Genie, LLC, a Florida limited liability company, its respective divisions, subsidiaries and affiliates (collectively, &quot;The
+Bridal Genie&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is subject to the terms of a legal contract between you and The Bridal Genie. These
+General Terms and Conditions of Use (&quot;General Terms&quot;) explain how the legal contract between you and The Bridal Genie is
+made and sets out the terms of that contract.
+
+1. Agreement to Terms.
+Unless we agree otherwise in writing, your contract with us always includes the General Terms. To the extent any area within
+the Service contains specific terms and conditions concerning its use (&quot;Specific Terms&quot;), your contract with The Bridal Genie
+will also include those Specific Terms. To the extent there is a direct conflict between the General Terms and the Specific
+Terms, the Specific Terms shall prevail. Together, the General Terms and Specific Terms, if any (collectively, the &quot;Terms&quot;),
+form the legal and binding contract between you and The Bridal Genie. Because the Terms are a legally binding contract, you
+should carefully read them before accessing or using the Service.
+You may not use the Service if you do not accept the Terms. By clicking to accept or agree to the Terms or by using the
+Service, you agree to comply with the Terms and all applicable laws and regulations in connection with your use of the
+Service and your purchases on the Service. If you do not want to be bound by these Terms, please do not use the Service.
+These Terms and the information provided in the Service do not modify or supersede the terms and conditions of your
+purchase of any product or service from The Bridal Genie except as specifically provided in these Terms.
+
+2. Privacy.
+You understand that it may be necessary for us to collect personal information about you. In doing so, The Bridal Genie
+promises to respect and safeguard the privacy of your personal information as set forth in The Bridal Genie Privacy Policy,
+available at http://www.thebridalgenie.com/Privacy_Legal, as modified by us from time to time.
+In most cases, we will rely on your consent to process your personal information. You may indicate your consent in a number
+of ways, including, as permitted by law, ticking a box (or equivalent action) to indicate your consent when (1) providing us
+with your personal information through our Services or a form (including enrolling in Promotions); or (2) registering or
+creating an account with us. You consent to our collection, use and disclosure of your personal information in accordance with
+our privacy policy, available at http://www.thebridalgenie.com/Privacy_Legal, as modified by us from time to time. In
+some cases, we will directly ask for your consent to process your personal information. You understand and agree that when
+you volunteer personal information about yourself you are providing The Bridal Genie with affirmative consent to collect the
+personal information about you.
+You may at any time withdraw your consent with future effect and without affecting the lawfulness of processing of your
+Personal Data based on the consent you provided before you withdrew it, and exercise other controls regarding website and
+online data collection, interest-based advertising, your communication settings, and app preferences. Depending on the
+Service, collection and use of Personal Data may be required for the Services to work. For more information about the
+information we collect and about how to manage your preferences and/or withdraw consent, please see our Privacy Policy.
+
+3. Modification of Terms.
+The Bridal Genie shall have right at any time and without prior notice, at its sole discretion, to revise these Terms or to
+impose new terms and conditions with respect to access to or use of the Service. Such revisions and additions shall be
+effective immediately upon notice thereof, which may be given by any means, including, but not limited to, posting the
+revised or additional terms and conditions at www.thebridalgenie.com/ or providing notice through the Service. You
+should check this Web page periodically for any modification to these Terms. By using the Service after we post changes to
+these Terms, you agree to accept those changes, whether you, in fact, reviewed them or not. No modification to these Terms
+by any party other than The Bridal Genie shall be enforceable against The Bridal Genie unless expressly agreed to by The
+Bridal Genie in writing.
+
+4. Discontinued Operation of Service; Termination of Access.
+We grant you a limited, non-transferable license to make personal use of the Service on one computer or mobile device in
+accordance with these Terms, and all applicable laws. This license does not include the right to resell or make any
+commercial use of the Service or any content available through the Service.
+The Bridal Genie retains the right, without notice and at any time, to modify, suspend or discontinue the availability of all or
+any part of the Service, to charge a fee for parts of the Service that may have been previously provided at no charge, to
+discontinue any products or services offered through the Service. The Bridal Genie is not liable to you or to any third party
+for any modification, suspension or discontinuance of the Service.
+The Bridal Genie may disable your ability to access your account or may terminate your right to access or use the Service or
+any portion thereof, without notice, at any time, and for any reason, including reasons such as conduct that we, in our sole
+discretion, believe is in violation of any applicable law or is harmful to the interests of another user, The Bridal Genie or its
+suppliers, vendors, and content providers (collectively, &quot;Providers&quot;).
+Your right to use the Service terminates automatically if you fail to comply with these Terms. No notice is required from us to
+effect such termination. Additionally, we may terminate these Terms at any time and for any reason and may give you notice
+of such termination by any means, such as e-mail, alert messages posted through the Service, posting notice
+on www.thebridalgenie.com/ or otherwise generally publishing such termination. Upon termination, you must stop using
+the Service and remove all copies from your computer or mobile device. Rights and obligations under these Terms which by
+their nature should survive will survive and remain in effect after any termination or expiration of the Terms.
+
+5. Children.
+You must be at least 13 years old to use the Service, and, if you are under 18, you may use the Service only with the
+permission and involvement of a parent or guardian.
+
+6. Content.
+The Web sites, mobile applications, and services comprising the Service, each of their respective components, all content
+provided by or through the Service, together with the user interface, the compilation and arrangement of the Web sites and
+mobile applications, and the text, photographs, audio and video, graphics, logos, illustrations, descriptions, data, and other
+material available on or through the Web sites and mobile applications provided as a part of the Service are referred to
+collectively as the &quot;Content&quot;. The Bridal Genie may change, delete, or update any Content at any time and without prior
+notice.
+Unless otherwise noted, all Content is protected by copyrights, trademarks, service marks, and other proprietary rights that
+are owned by The Bridal Genie or its Providers. You may view and use the Content only for your personal use, namely,
+shopping and ordering products and services from The Bridal Genie through the Service, and for no other purpose. You may
+not use, reproduce, copy, modify, transmit, display, publish, sell, license, publicly perform, distribute or commercially exploit
+any of the Content, or use data mining, robots, or similar data gathering and extraction tools with the Service. You may not
+frame or utilize framing techniques to enclose any trademark, logo, or other proprietary information (including images, text,
+page layout, or form) of The Bridal Genie or its Providers without our express, written consent. You may not use any meta
+tags or any other &quot;hidden text&quot; utilizing our name or trademarks without our express, written consent. Any use of the
+Content, except as specifically permitted in these Terms or as otherwise expressly permitted in a writing signed by The Bridal
+Genie, is strictly prohibited.
+NOTICE AND PROCEDURE FOR MAKING CLAIMS OF INTELLECTUAL PROPERTY INFRINGEMENT
+If you believe that your rights under United States or international copyright laws are being violated by any Content posted
+on or transmitted through the Service, or items advertised on the Service, please contact us promptly so that we may
+investigate the situation and, if appropriate, block or remove the offending Content. It is our policy to disable access to
+infringing materials, and to terminate access of repeat infringers to the Service. In order initiate the investigation of your
+claim of infringement, you must provide us with the following information:
+An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual
+property interest.
+A description of the copyrighted work or other intellectual property that you believe has been infringed.
+A description of where the material that you claim is infringing is located or identified on the Service; Your name, address,
+telephone number, and e-mail address.
+
+A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright or intellectual
+property owner, its agent, or the law; and
+A statement by you, made under penalty of perjury, that the information submitted to us is accurate and that you are the
+owner of the copyright or intellectual property or authorized to act on behalf of the owner of the copyright or intellectual
+property.
+The above information should be provided to The Bridal Genie&#39;s agent for notice of claims of copyright or other intellectual
+property infringement, who can be reached as follows:
+By mail:
+Copyright Agent
+The Bridal Genie, LLC
+4300 S Jog Road Unit 541483
+Greenacres, FL 33454
+By e-mail: Inquiry@TheBridalGenie.com
+
+7. Your Submissions.
+You may not post on or transmit through the Service any unlawful, harmful, threatening, abusive, harassing, defamatory,
+vulgar, obscene, sexually explicit, profane, hateful, racially, ethnically, or otherwise objectionable Content of any kind,
+including, but not limited to, any Content that encourages conduct that would constitute a criminal offense, give rise to civil
+liability, or otherwise violate any applicable law. If we are notified that you have submitted or posted such Content, then we
+may investigate the allegation and determine in our sole discretion whether to remove or request the removal of such
+Content from the Service. We may disclose any Content or electronic communication of any kind (i) to satisfy any law,
+regulation, or government request; (ii) if such disclosure is necessary or appropriate to operate the Service or our business;
+or (iii) to protect the rights or property of The Bridal Genie, its Providers, you or other users of the Service.
+You may upload to or otherwise submit to the Service only such Content (a) that is not subject to any copyright or other
+proprietary rights restrictions; (b) with respect to which the owner or licensor has given express authorization for The Bridal
+Genie to distribute over the Internet; and (c) that does not contain any material that may damage, interfere with, intercept
+or expropriate any system, data or personal information. Any copyrighted or other proprietary Content uploaded or
+submitted to the Service with the consent of a copyright owner should contain a phrase such as &quot;Copyright, owned by [name
+of owner]; used by permission&quot;. The unauthorized submission of copyrighted or other proprietary Content is illegal and could
+subject you to civil and criminal liability. You will be liable for any damage resulting from any infringement of copyrights or
+proprietary rights, or from any other harm arising from an unauthorized submission or submission of any material prohibited
+by these Terms.
+Except as otherwise expressly provided in these Terms, any Content you transmit to the Service by e-mail or otherwise,
+including any photos, videos, stories, questions, comments, suggestions, or the like, is and will be treated as non-confidential
+and non-proprietary and may be used by The Bridal Genie and its Providers, for any purpose, including, but not limited to,
+reproduction, disclosure, transmission, publication, broadcast, and posting. Furthermore, The Bridal Genie and its Providers
+are free to use any ideas, concepts, know-how, or techniques contained in any communication you submit through the
+Service for any purpose whatsoever, including, but not limited to, developing, manufacturing, and marketing products or
+services using information contained in such communication.
+8. Linked Third Party Sites.
+Links to Web sites operated by third parties available through the Service, including links to Web sites operated by Providers,
+do not constitute sponsorship, endorsement, or approval by The Bridal Genie of the content, policies, or practices of such
+Web sites. Linked Web sites are not operated, controlled, or maintained by The Bridal Genie, and The Bridal Genie is not
+responsible for the availability, content, security, policies, or practices of linked Web sites, including, without limitation,
+privacy policies and practices. Links to other Web sites are provided for your convenience only, and you access them at your
+own risk.
+
+9. Disclaimer and Limitation of Liability.
+THE SERVICE IS LICENSED &quot;AS-IS,&quot; &quot;WITH ALL FAULTS,&quot; AND &quot;AS AVAILABLE.&quot; YOU BEAR THE RISK OF USING THE
+SERVICE. THE BRIDAL GENIE AND ITS PROVIDERS MAKE NO WARRANTIES OR REPRESENTATIONS WHATSOEVER WITH
+RESPECT TO THE SERVICE, ANY CONTENT AND ALL PRODUCTS OR SERVICES AVAILABLE THROUGH THE SERVICE,
+INCLUDING THE AVAILABILITY OF THE SERVICE, ANY PRODUCTS, OR ANY CONTENT OR THE ACCURACY, COMPLETENESS,
+OR TIMELINESS OF THAT CONTENT. THE BRIDAL GENIE AND ITS PROVIDERS DO NOT WARRANT OR REPRESENT THAT YOUR
+ACCESS TO OR USE OF THE SERVICE, ANY CONTENT OR PRODUCTS WILL BE UNINTERRUPTED OR FREE OF ERRORS OR
+OMISSIONS, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICE, ANY CONTENT OR ANY LINKED SITE IS FREE OF
+COMPUTER VIRUSES OR OTHER HARMFUL COMPONENTS. WITHOUT LIMITING THE FOREGOING, ALL CONTENT AND
+PRODUCTS PROVIDED OR AVAILABLE FOR PURCHASE THROUGH THE SERVICE ARE PROVIDED &quot;AS IS,&quot; WITH NO WARRANTY
+OF ANY KIND. THE BRIDAL GENIE AND ITS PROVIDERS HEREBY DISCLAIM ALL IMPLIED WARRANTIES WITH RESPECT TO
+THE SERVICE, ALL CONTENT AND PRODUCTS, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, AND THOSE ARISING BY
+STATUTE OR FROM A COURSE OF DEALING OR USAGE OF TRADE. THE &quot;AS IS&quot; CONDITION OF THE SERVICE, PRODUCTS
+AND ALL CONTENT IS EXPRESSLY MADE A CONDITION OF ANY TRANSACTION ARISING THROUGH OR AS A RESULT OF THE
+SERVICE. Because some jurisdictions do not allow the disclaimer or limitation of implied warranties, the above limitations
+may not apply to you.
+IN NO EVENT WILL THE BRIDAL GENIE, ITS PROVIDERS, OR ANY OF ITS OR THEIR RESPECTIVE DIRECTORS, OFFICERS,
+EMPLOYEES, AND AGENTS, BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, INCIDENTAL, INDIRECT, PUNITIVE, OR SPECIAL
+DAMAGES WHATSOEVER (INCLUDING DAMAGES FOR DELAY, LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS
+OF BUSINESS INFORMATION, AND THE LIKE), WHETHER FORESEEABLE OR UNFORESEEABLE, ARISING OUT OF THESE
+TERMS, THE USE OF OR INABILITY TO USE THE SERVICE, OR ANY PURCHASE MADE THROUGH THE SERVICE, REGARDLESS
+OF THE BASIS OF THE CLAIM AND EVEN WHEN THE BRIDAL GENIE OR A PROVIDER HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. Because some jurisdictions do not allow the exclusion or limitation of liability for
+consequential or incidental damages, the above limitations may not apply to you.
+IN NO EVENT WILL THE BRIDAL GENIE&#39;S AGGREGATE LIABILITY TO YOU FOR ALL DAMAGES FOR ANY CAUSE WHATSOEVER,
+REGARDLESS OF THE FORM OF ACTION, WHETHER STATUTORY, CONTRACT OR TORT (INCLUDING NEGLIGENCE) EXCEED
+THE FEES PAID FOR THE PRODUCT OR SERVICE FORMING THE BASIS OF THE CLAIM.
+These limits apply to anything related to the Terms, the Service, any content (including code) on third party Web sites, and
+all claims for breach of contract (whether for the purchase of products or services or otherwise), breach of warranty,
+guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law. These limits also
+apply even if: (i) repair, replacement, or a refund for the Service does not fully compensate you for any damages; or (ii) The
+Bridal Genie or a Provider knew or should have known about the possibility of the damages. YOU EXPRESSLY AGREE NOT TO
+SEEK TO RECOVER ANY DAMAGES, INCLUDING DIRECT, CONSEQUENTIAL, SPECIAL, INDIRECT, INCIDENTAL OR PUNITIVE
+DAMAGES, FROM ANY PROVIDER.
+
+10. Indemnification.
+You agree to defend, indemnify, and hold harmless The Bridal Genie, its affiliates and Providers, and our and their respective
+directors, officers, employees, and agents from and against all claims, losses, damages, liabilities, and costs (including, but
+not limited to, reasonable attorneys&#39; fees and court costs), arising out of or relating to your breach of these Terms or your
+access or use of the Service and any product or service provided to you arising out of or relating to your use of the Service.
+The foregoing indemnification obligation shall survive termination of these Terms and the Service.
+
+11. Registration; Customer Accounts; Use of Service.
+Certain services offered on or through the Service require you to first open an account. You are responsible for maintaining
+the confidentiality of your account information, including your password, and for all activity that occurs under your account.
+You agree to notify us immediately of any unauthorized use of your account or password, or any other breach of security. You
+may be held liable for losses incurred by us or any other user of the Service due to someone else using your password or
+customer account. You may not use anyone else&#39;s password or customer account. You may not attempt to gain unauthorized
+access to the Service, and if you attempt to do so, or assist others in making such attempts, then we may terminate your
+account. You agree to provide us with accurate information about yourself as prompted by the registration process, and
+update that information to keep it current. You may update any of your account information by clicking on the My Account
+button, logging in to your account and selecting My Profile.
+You may not use any automatic device, program, or technology, or any equivalent manual process, to access, acquire, copy,
+probe, test or monitor any portion of the Service or any Content, or in any way reproduce or circumvent the navigational
+structure or presentation of the Service or any Content, to obtain or attempt to obtain any materials, documents or
+information through any means not purposely made available through the Service. You agree that you will not take any
+action that imposes an unreasonable or disproportionate load on the infrastructure of the Service.
+
+12. The Bridal Genie Marketing Mobile Program Terms &amp; Conditions.
+From time to time, if you reside in the United States of America, The Bridal Genie may offer SMS text communications,
+concerning your appointment, your shopping experience, and all of your wedding plans, including promotional offers from
+commercial partners of The Bridal Genie that support the groom and your bridal registry. You can choose to receive these
+messages by giving your consent to receive autodialed text messages by providing your mobile phone number to The Bridal
+Genie in writing.
+The SMS text messages that promote partners of The Bridal Genie, may occasionally include a link directly to the partners&#39;
+website. When you click the link within the text message, you will be directed to the partners’ website, at which time you will
+provide the partner with your information directly. The Bridal Genie will not receive any information you provide to the
+partner.
+Other SMS text messages that promote partners of The Bridal Genie, may direct you to complete information on a page of
+The Bridal Genie website. When you enter information, on The Bridal Genie’s website, to participate in a partners’
+promotional offer we will share your information with the partner.
+Consent is not required as a condition of purchase. Message and data rates may apply.
+By signing up, you are confirming you are over the age of 18 and are a resident of the United States.
+If at any time after signing up for mobile messages you wish to stop receiving them, follow the directions below and we will
+remove you from future communications within 14 calendar days.
+How we use your Information: The Bridal Genie will send you email that includes customized content, including targeted
+offers and other promotional advertising. We will respect and safeguard the privacy of your personal information as described
+in the The Bridal Genie Privacy Policy. You can also find details on how we use or may share your information with third
+parties within the Privacy Policy.
+For Additional Help
+If you have questions about receiving text messages from The Bridal Genie, or need help with anything else, call (302) 495-
+WISH (9474).
+
+13. Product Availability; Information.
+All in-store sales are final. Please see our On-line Returns and Exchanges Policy at www.thebridalgenie.com/
+Product availability through the Service is not guaranteed as certain products may be low in stock or discontinued. If
+products are not available by the time your order processes, we will notify you of this via e-mail. You can always verify
+availability with our customer service representatives by completing the form available on the &quot;Contact Us&quot; page
+of www.thebridalgenie.com/, or by sending an e-mail to us at inquiry@thebridalgenie.com.
+Products displayed on The Bridal Genie website may be available to The Bridal Genie Boutique in the United States but may
+not be immediately available for fitting at the Greenacres location. The prices displayed at The Bridal Genie Boutique and the
+website www.thebridalgenie.com/ are quoted in U.S. dollars, unless otherwise indicated and are subject to change. We
+have tried to accurately display the colors of products, but the actual colors you see will depend on your monitor and may not
+be accurate. In addition, product specific Content may contain errors or omissions or may be out of date. Product specific
+Content is provided for informational purposes only and is not binding on The Bridal Genie in any way except to the extent it
+is specifically indicated to be so.
+
+14. Miscellaneous.
+Advertisements from The Bridal Genie, Providers or other third parties may, from time to time, appear within, adjacent to, or
+as a part of the Service. The revenue from advertisements allows The Bridal Genie to provide you with Content and parts of
+the Service without charge to you. The advertisements may be targeted to the information stored in the Service, your search
+requests, or other information. In exchange for your license to access and use the Service, you agree that advertising is, and
+will continue to be, a part of the Service. We have no control over, and we are not responsible or liable for, such third-party
+advertising.
+These Terms constitute the entire agreement of the parties with respect to the subject matter hereof; and supersede all
+previous written or oral agreements between the parties with respect to such subject matter. No waiver by The Bridal Genie
+
+of any breach or default hereunder shall be deemed to be a waiver of any preceding or subsequent breach or default. If any
+provision of these Terms is found to be unlawful, void, or for any reason unenforceable, then that provision will be deemed
+severed from the Terms and will not affect the validity and enforceability of any other provisions of the Terms. The headings
+and captions in these Terms are intended for convenience only and shall in no way affect the interpretation of the Terms. You
+may not assign your rights or delegate your duties under these Terms.
+The Bridal Genie and its Providers shall not be liable for any nonperformance or delay in performance caused by any
+unforeseen act or event beyond their control. Each of our affiliates and each Provider is a third-party beneficiary of, and will
+have the right to enforce, the Terms against you.
+Your use of the Service will be deemed to be your consent to receive electronic communications from us, whether addressed
+to the e-mail address associated with your account or posted at the Service. You acknowledge and agree that any
+communication by e-mail or by posting at the Service satisfies any legal requirement that such communications be made in
+writing.
+You may not ship, transfer, export into any country, or use in any manner prohibited by the United States Export
+Administration Act or any other applicable law (collectively the &quot;Export Laws&quot;), our mobile applications and any software that
+may be downloaded from the Service. In addition, if all or any part of the Service is identified as an export controlled item
+under the Export Laws, you represent to us that you are not a national of, resident in or otherwise located within, an
+embargoed nation, and that you are not otherwise prohibited under the Export Laws from visiting or using the Service.
+Access to or use of the Service shall not be construed as the purposeful availment by The Bridal Genie or its Providers of the
+privilege or benefits of doing business in any state or legal jurisdiction other than the Commonwealth of Pennsylvania. These
+Terms, and any disputes of any kind between you and The Bridal Genie or its Providers, shall be governed by, construed and
+resolved in accordance with the laws of the Commonwealth of Pennsylvania, without regard to conflicts of law provisions.
+Sole and exclusive jurisdiction for any action or proceeding arising out of, or related to, the Terms, use of the Service, or any
+orders placed or products purchased through the Service, shall be in the state or federal courts located in Montgomery
+County, Pennsylvania. If we take any action to enforce the Terms, then we will be entitled to recover from you, and you agree
+to pay, all reasonable attorneys&#39; fees and costs of litigation we incur, in addition to any other relief, at law or in equity, to
+which we may be entitled.
+
+Effective Date of Terms: January 1, 2020.
+© 2020-2021 The Bridal Genie, LLC. All Rights Reserved.</pre>
+
+            </div>
+            <!-- end container -->
+
+        </div>
+        <!-- end div about-wrap -->
+        
+    </div>
+    <!-- END ABOUT -->
+    
+    <!-- START FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    
+                    <ul class="social-media">
+
+                        <li>
+                            <a href="https://fb.me/TheBridalGenie">
+                                <i class="fa fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/TheBridalGenie">
+                                <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/TheBridalGenie">
+                                <i class="fa fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/TheBridalGenie">
+                                <i class="fa fa-pinterest fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.snapchat.com/add/bridalgenie">
+                                <i class="fa fa-snapchat fa-2x"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- end social-media -->
+
+                    <div class="copyright">
+
+                        <p>Copyright © 2020 Bridal Genie</p>
+
+                    </div>
+                    <!-- end copyright -->
+
+                </div>
+                <!-- end col-md-12 -->
+
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end container -->
+
+    </footer>
+    <!-- END FOOTER -->
+
+
+        
+        <script src="js/jquery.v1.12.4.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.stellar.min.js?=1"></script>       
+        <script src="js/jquery.nivo.slider.js"></script> 
+        <script src="js/jquery.cubeportfolio.js"></script>
+        <script src="js/cubeportfoiomain.js"></script>
+        <script src="js/jquery.cbpFWSlider.js"></script>
+        <script src="js/jquery.fancybox.pack.js"></script> 
+        <script src="js/jquery.fancybox-media.js"></script>
+        <script src="js/jquery.vaccordion.js"></script>
+        <script src="js/jquery.cbpQTRotator.js"></script>
+
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/preloader.js"></script>
+ 
+        <script src="js/jquery.scrollUp.js"></script>
+        <script src="js/jquery.countTo.js"></script>
+        <script src="js/jquery.appear.js"></script>
+        <script src="js/scrollReveal.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/sticky.min.js"></script>
+
+        <!-- CONTACT FORM -->
+        <script src="js/custom.min.js"></script>
+		
+                		
+</body>
+
+</html>
