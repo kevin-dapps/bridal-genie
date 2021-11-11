@@ -1,26 +1,3 @@
-<?php
-    require($_SERVER['DOCUMENT_ROOT'].'/sendgrid/sendgrid-php.php');
-    
-    if(isset($_POST['email'])){
-        $email = new \SendGrid\Mail\Mail(); 
-        $email->setFrom("bridalgenie@gmail.com", "The Bridal Genie Website");
-        $email->setSubject("Bridal Genie - Wish Submitted!");
-        $email->addTo("bridalgenie@gmail.com", "The Bridal Genie");
-        $email->addContent("text/html", $_POST['body_html']);
-        $sendgrid = new \SendGrid('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');
-        try {
-            $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
-        } catch (Exception $e) {
-            echo 'Caught exception: '. $e->getMessage() ."\n";
-        }
-    }
-    require('includes/header.php');
-    
-?>
-
 <body class="pre-loader smoothy">
 
     <!-- START PRELOADER -->
